@@ -52,7 +52,7 @@ steps:
       echo     { >> da_scan.json
       echo       "scan_config_request": { >> da_scan.json
       echo         "target_url": { >> da_scan.json
-      echo           "url": "https://backendprojectnodejs.herokuapp.com/ping", >> da_scan.json
+      echo           "url": "https://backendprojectnodejs.herokuapp.com", >> da_scan.json
       echo           "http_and_https": true, >> da_scan.json
       echo           "directory_restriction_type": "DIRECTORY_AND_SUBDIRECTORY" >> da_scan.json
       echo         } >> da_scan.json
