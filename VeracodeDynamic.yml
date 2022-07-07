@@ -28,7 +28,7 @@ steps:
   inputs:
     script: |
       echo [default] >> credentials.txt
-     echo veracode_api_key_id = $(VERACODE_API_KEY_ID) >> credentials.txt
+      echo veracode_api_key_id = $(VERACODE_API_KEY_ID) >> credentials.txt
       echo veracode_api_key_secret = $(VERACODE_API_KEY_SECRET) >> credentials.txt
       mkdir c:\Users\VssAdministrator\.veracode
       cp credentials.txt c:\Users\VssAdministrator\.veracode\credentials
