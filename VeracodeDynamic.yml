@@ -23,24 +23,24 @@ steps:
     script: |
       pip install veracode-api-signing
 
-#- task: CmdLine@2
-# displayName: VC - Apply Creds
-#  inputs:
-#    script: |
-#      echo [default] >> credentials.txt
-#     echo veracode_api_key_id = $(VERACODE_API_KEY_ID) >> credentials.txt
-#      echo veracode_api_key_secret = $(VERACODE_API_KEY_SECRET) >> credentials.txt
-#      mkdir c:\Users\VssAdministrator\.veracode
-#      cp credentials.txt c:\Users\VssAdministrator\.veracode\credentials
-- task: Veracode@3
-  displayName: Config Veracode
+- task: CmdLine@2
+ displayName: VC - Apply Creds
   inputs:
-    ConnectionDetailsSelection: 'Endpoint'
-    AnalysisService: 'apiveracode'
-    veracodeAppProfile: '$(system.teamProject)'
-    version: '$(build.buildNumber)'
-    filepath: '$(build.artifactstagingdirectory)'
-    maximumWaitTime: '60'
+    script: |
+      echo [default] >> credentials.txt
+     echo veracode_api_key_id = $(VERACODE_API_KEY_ID) >> credentials.txt
+      echo veracode_api_key_secret = $(VERACODE_API_KEY_SECRET) >> credentials.txt
+      mkdir c:\Users\VssAdministrator\.veracode
+      cp credentials.txt c:\Users\VssAdministrator\.veracode\credentials
+#- task: Veracode@3
+#  displayName: Config Veracode
+#  inputs:
+#    ConnectionDetailsSelection: 'Endpoint'
+#    AnalysisService: 'apiveracode'
+#    veracodeAppProfile: '$(system.teamProject)'
+#    version: '$(build.buildNumber)'
+#    filepath: '$(build.artifactstagingdirectory)'
+#    maximumWaitTime: '60'
 
 - task: CmdLine@2
   displayName: VC - Create DA json
