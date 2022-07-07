@@ -24,7 +24,7 @@ steps:
       pip install veracode-api-signing
 
 - task: CmdLine@2
- displayName: VC - Apply Creds
+  displayName: VC - Apply Creds
   inputs:
     script: |
       echo [default] >> credentials.txt
